@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/test_simulator.dir/src/test_simulator.cpp.o -o /home/liruizhe/repository/bin/test_simulator  -Wl,-rpath,/home/liruizhe/repository/lib /home/liruizhe/repository/lib/libsimulator.so /home/liruizhe/repository/lib/libcontroller.so 
