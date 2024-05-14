@@ -28,10 +28,18 @@ void Controller::runControllerThreadFunc(){
     is_running_ = false;
 }
 
+// Eigen::Matrix<double, Eigen::Dynamic, 1> Controller::getControlInput(){
+//     double Kp = 1;
+//     Eigen::Matrix<double, Eigen::Dynamic, 1> x = sim_ptr_->getState();
+//     Eigen::Matrix<double, Eigen::Dynamic, 1> u{{-Kp * x(1,0)}};
+//     return u;
+// }
+
 Eigen::Matrix<double, Eigen::Dynamic, 1> Controller::getControlInput(){
-    double Kp = 1;
+    double Kp = 2.5;
+    double Kd = 1.2;
     Eigen::Matrix<double, Eigen::Dynamic, 1> x = sim_ptr_->getState();
-    Eigen::Matrix<double, Eigen::Dynamic, 1> u{{-Kp * x(1,0)}};
+    Eigen::Matrix<double, Eigen::Dynamic, 1> u{{-Kp * x(0,0) - Kd * x(1,0)}};
     return u;
 }
 
